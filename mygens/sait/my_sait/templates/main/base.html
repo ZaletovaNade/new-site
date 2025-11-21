@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Геншин Импакт — Карта регионов</title>
+    <!-- Подключение CSS файла -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Регион Геншина:</h1>
+    
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Monstadt')" id="defaultOpen">Монштадт</button>
+        <button class="tablinks" onclick="openTab(event, 'Liyue')">Ли Юэ</button>
+        <button class="tablinks" onclick="openTab(event, 'Inazuma')">Инадзума</button>
+    </div>
+
+    <div id="Monstadt" class="tabcontent">
+        <h2>Монштадт</h2>
+        <p>Город свободных ветров.</p>
+    </div>
+
+    <div id="Liyue" class="tabcontent">
+        <h2>Ли Юэ</h2>
+        <p>Порт города, славящийся своими рудниками и торговлей.</p>
+    </div>
+
+    <div id="Inazuma" class="tabcontent">
+        <h2>Инадзума</h2>
+        <p>Архипелаг островных государств с мощью молнии.</p>
+    </div>
+
+    <!-- Скрипт переключения вкладок -->
+    <script src="base"></script>
+</body>
+</html>

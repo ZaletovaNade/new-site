@@ -1,0 +1,21 @@
+function openTab(evt, tabName) {
+    // Получаем все элементы с классом "tabcontent"
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Удаляем класс active у всех кнопок
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Показываем выбранную вкладку и добавляем активный класс выбранной кнопке
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// По умолчанию открывается первая вкладка ("Монштадт")
+document.getElementById("defaultOpen").click();
