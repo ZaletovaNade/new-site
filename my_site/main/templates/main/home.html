@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teyvat Regions</title>
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="static/main/css/base.css">
+</head>
+<body>
+    <div class="navbar">
+        <!-- Логотип -->
+        <div class="logo">Teyvat</div>
+        
+        <!-- Кнопки навигации -->
+        <ul class="nav-buttons">
+            <li><a href="#" onclick="openTab(event, 'Monstadt')" id="defaultOpen">Монштадт</a></li>
+            <li><a href="#" onclick="openTab(event, 'Liyue')">Ли Юэ</a></li>
+            <li><a href="#" onclick="openTab(event, 'Inazuma')">Инадзума</a></li>
+        </ul>
+    </div>
+
+    <!-- Контент каждой вкладки -->
+    <div id="Monstadt" class="tabcontent show">
+        <h2>Монштадт</h2>
+        <p>Описание региона Монштадт.</p>
+    </div>
+
+    <div id="Liyue" class="tabcontent">
+        <h2>Ли Юэ</h2>
+        <p>Описание региона Ли Юэ.</p>
+    </div>
+
+    <div id="Inazuma" class="tabcontent">
+        <h2>Индзума</h2>
+        <p>Описание региона Индзума.</p>
+    </div>
+
+    <script>
+    // Функция переключения вкладок
+    function openTab(evt, tabName) {
+        var i, tabcontent, navlinks;
+        // Скрываем все вкладки
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].classList.remove('show');
+        }
+        // Убираем класс active со всех кнопок
+        navlinks = document.querySelectorAll('.nav-buttons a');
+        for (i = 0; i < navlinks.length; i++) {
+            navlinks[i].classList.remove('active');
+        }
+        // Показываем выбранную вкладку и активируем соответствующую кнопку
+        document.getElementById(tabName).classList.add('show');
+        evt.currentTarget.classList.add('active');
+    }
+
+    // Автоматически открываем первую вкладку при загрузке страницы
+    document.getElementById("defaultOpen").click();
+    </script>
+
+</body>
+</html>
